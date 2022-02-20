@@ -52,6 +52,16 @@ const Login = () => {
 			password: state.password.passwordValue,
 			id: Math.random().toString(),
 		}
+		async function postData(){
+			await fetch('https://react-http-form-68713-default-rtdb.firebaseio.com/form.json',{
+				method : 'POST',
+				body : JSON.stringify(newData),
+				headers : {
+					'content-type' : 'application/json'
+				}
+			})
+		}
+		postData()
 		dispatchLogin({ type: 'LOGIN', newData })
 		return navigate('/home')
 	}

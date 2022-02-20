@@ -79,7 +79,6 @@ const loginReducer = (state,action) =>{
 				}
 			}
         case 'LOGIN' :
-            console.log(action)
             return {
                 ...state,
                 loginData : [...state.loginData,action.newData]
